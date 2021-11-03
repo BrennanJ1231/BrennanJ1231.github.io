@@ -3,7 +3,7 @@
  */
 public class Bicycle 
 {
-	private String make;
+	private String make;//using other objects helps simplify code
 	private Wheel frontWheel;
 	private Wheel backWheel;
 	private Frame f;
@@ -74,7 +74,7 @@ public class Bicycle
 		return this.make.equalsIgnoreCase(b.getMake()) && this.frontWheel.equals(b.getFrontWheel()) && this.backWheel.equals(b.getBackWheel()) && this.f.equals(b.getFrame());
 	}
 	
-	public String toString()
+	public String toString()//displays all values of bicycle object including wheel and frame
 	{
 		return "[Bicycle] Make: " + this.make + " Front Wheel: " + this.frontWheel.toString() + " Back Wheel: " + this.backWheel.toString() + " Frame: " + this.f.toString();
 	}

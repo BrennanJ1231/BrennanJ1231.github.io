@@ -19,7 +19,7 @@ public class Wheel
 	
 	public void setDiameter(double d)
 	{
-		if(d >= 16.0 && d<=55.0)
+		if(d >= 16.0 && d<=55.0)//checks if diameter is within the valid range
 		{
 			this.diameter = d;
 		}

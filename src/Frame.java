@@ -20,7 +20,7 @@ public class Frame
 	
 	public void setSize(double s)
 	{
-		if(s >= 18.5 && s <=60)
+		if(s >= 18.5 && s <=60)//checks size of tire is within valid ranges
 		{
 			this.size = s;
 		}
@@ -32,7 +32,7 @@ public class Frame
 	
 	public void setType(String s)
 	{
-		String[] types = {"Step-Through", "Penny-Farthing", "Diamond"};
+		String[] types = {"Step-Through", "Penny-Farthing", "Diamond"};//allows us to check if the type is valid
 		if( s != null)
 		{
 			for(int i = 0; i < types.length; i++)

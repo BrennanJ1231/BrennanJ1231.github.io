@@ -9,7 +9,7 @@ public class MovingCircle
 	private double velocityX;
 	private double velocityY;
 	
-	public MovingCircle()
+	public MovingCircle()//sets each instance variable to their default values
 	{
 		this.setX(0.0);
 		this.setY(0.0);
@@ -37,7 +37,7 @@ public class MovingCircle
 	}
 	public void setDiameter(double n)
 	{
-		if(n>0.0)
+		if(n>0.0)//checks if diameter is a positive number
 		{
 			this.diameter = n;
 		}
@@ -81,17 +81,17 @@ public class MovingCircle
 		return this.x == m.getX() && this.y == m.getY() && this.diameter == m.getDiameter() && this.velocityX == m.getVelocityX() && this.velocityY == m.getVelocityY();
 	}
 	
-	public String toString()
+	public String toString()//displays all instance variables of the cirlce
 	{
 		return "[Cirlce]X: " + this.x + " Y: " + this.y + " Diameter " + this.diameter + " Velocity X: " + this.velocityX + " Velocity Y: " + this.velocityY;
 	}
 	
-	public void move()
+	public void move()//adds the velocity to x and y components to simulate moving
 	{
 		this.x += this.velocityX;
 		this.y += this.velocityY;
 	}
-	public boolean isColliding(MovingCircle c)
+	public boolean isColliding(MovingCircle c)//checks if the two circles have collided
 	{
 		double r1 = this.diameter/2.0;
 		double r2 = c.getDiameter()/2.0;
