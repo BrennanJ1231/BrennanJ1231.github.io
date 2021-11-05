@@ -30,6 +30,10 @@ public class Dresser
 							break;
 						}
 					}
+					if(clothes[1][clothes.length-1] != null)
+					{
+						System.out.println("This drawer is full");
+					}
 				}
 				else 
 				{
@@ -41,12 +45,44 @@ public class Dresser
 							break;
 						}
 					}
+					if(clothes[i][clothes.length-1] != null)
+					{
+						System.out.println("This drawer is full");
+					}
 				}
 			}
 				
 				
 		}
 			
+	}
+	
+	public void remove(Clothing c)
+	{
+		for(int i = 0; i<this.clothes.length; i++)
+		{
+			for(int k = 0; k<this.clothes[i].length; k++)
+			{
+				if(c.equals(this.clothes[i][k]))
+				{
+					clothes[i][k] = null;
+				}
+			}
+		}
+	}
+	
+	public void print()
+	{
+		for(int i = 0; i<clothes.length; i++)
+		{
+			for(int j = 0; j<clothes[i].length; j++)
+			{
+				if(clothes[i][j] == null)
+					break;
+				System.out.print(clothes[i][j].toString() + " ");
+			}
+			System.out.println();
+		}
 	}
 }
 	
