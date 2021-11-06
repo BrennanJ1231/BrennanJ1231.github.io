@@ -6,7 +6,7 @@ package homework;
 public class Dresser 
 {
 	private Clothing[][] clothes;
-	private String[] types = {"Undergarments", "Socks", "Stockings", "Tops", "Bottoms", "Capes"};
+	private String[] types = {"Undergarment", "Socks", "Stocking", "Top", "Bottom", "Cape"};
 	
 	public Dresser()
 	{
@@ -20,9 +20,14 @@ public class Dresser
 		{
 			if(item.equalsIgnoreCase(this.types[i]))
 			{
-				if(item.equalsIgnoreCase(this.types[1]) || item.equalsIgnoreCase(this.types[2]))
+				if(item.equalsIgnoreCase(this.types[1]) || item.equalsIgnoreCase(this.types[2]))//checks whether it is socks or stockings since those go into the same drawer
 				{
-					for(int j = 0; j<this.clothes[1].length; i++)
+					if(this.clothes[1][this.clothes.length-1] != null)
+					{
+						System.out.println("This drawer is full");
+						break;
+					}
+					for(int j = 0; j<this.clothes[1].length; j++)
 					{
 						if(this.clothes[1][j] == null)
 						{
@@ -30,24 +35,21 @@ public class Dresser
 							break;
 						}
 					}
-					if(clothes[1][clothes.length-1] != null)
-					{
-						System.out.println("This drawer is full");
-					}
 				}
 				else 
 				{
-					for(int k = 0; k<this.clothes[i].length; i++)
-					{
-						if(clothes[i][k] == null)
-						{
-							clothes[i][k] = c;
-							break;
-						}
-					}
-					if(clothes[i][clothes.length-1] != null)
+					if(this.clothes[i][this.clothes.length-1] != null)//checks for any of the other items and puts them in their corresponding drawers
 					{
 						System.out.println("This drawer is full");
+						break;
+					}
+					for(int j = 0; j<this.clothes[i].length; j++)
+					{
+						if(this.clothes[i][j] == null)
+						{
+							this.clothes[i][j] = c;
+							break;
+						}
 					}
 				}
 			}
@@ -77,8 +79,11 @@ public class Dresser
 		{
 			for(int j = 0; j<clothes[i].length; j++)
 			{
-				if(clothes[i][j] == null)
+				if(clothes[i][j] == null)//makes sure only values that are not null are displayed
+				{
 					break;
+				}
+				
 				System.out.print(clothes[i][j].toString() + " ");
 			}
 			System.out.println();

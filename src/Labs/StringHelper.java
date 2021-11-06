@@ -7,7 +7,19 @@ public class StringHelper
 {
 	public static boolean hasAllUniqueCharacters(String s)
 	{
-		
+		s = s.toLowerCase();
+		boolean repeat = true;
+		for(int i = 0; i<s.length(); i++)
+		{
+			for(int j = i+1; j<s.length(); j++)
+			{
+				if(s.charAt(i) == s.charAt(j))
+				{
+					repeat = false;
+				}
+			}
+		}
+		return repeat;
 	}
 	
 	public static String meshStrings(String one, String two)
@@ -16,45 +28,41 @@ public class StringHelper
 		int length;
 		if(one.length() > two.length())
 		{
-			length = one.length();
+			length = two.length();
+			for(int i = 1; i <length+1; i++)
+			{
+					newString += one.substring(i-1, i) + two.substring(i-1, i);
+			}
+			newString += one.substring(length);
 		}
 		else
 		{
-			length = two.length();
+			length = one.length();
+			for(int i = 1; i <length+1; i++)
+			{
+					newString += one.substring(i-1, i) + two.substring(i-1, i);
+			}
+			newString += two.substring(length);
 		}
 			
-		for(int i = 0; i <length; i++)
-		{
-			if(one.substring(i-1, i) == null && two.substring(i-1, i) != null)
-			{
-				newString += two.substring(i-1, i);
-			}
-			else if(one.substring(i-1, i) != null && two.substring(i-1, i) == null)
-			{
-				newString += one.substring(i-1, i);
-			}
-			else
-			{
-				newString += one.substring(i-1, i) + two.substring(i-1, i);
-			}
-		}
 		return newString;
 	}
 	
 	public static String replaceVowelsWithOodle(String s)
 	{
-		char[] vowels = {'a', 'e', 'i', 'o', 'u'};
-		for(int i = 0; i <s.length(); i++)
+		String[] vowels = {"a", "e", "i", "o", "u"};
+		String newString = "";
+		for(int j = 0; j<s.length(); j++)
 		{
-			for(int j = 0; j<vowels.length; i++)
+			for(int i = 0; i<vowels.length; i++)
 			{
-				if(s.charAt(i) == vowels[j])
+				if(s.substring(j, j+1).equalsIgnoreCase(vowels[i]))
 				{
-					s.replace(s.substring(i-1, 1), "oodle");
+					newString += s.replace(s.substring(j,j+1), "oodle");
 				}
 			}
 		}
-		return s;
+		return newString;
 	}
 	
 	public static double weight(String s)

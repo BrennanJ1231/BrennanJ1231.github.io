@@ -34,7 +34,7 @@ public class DresserFrontEnd {
 
 	}
 	
-	public static void addToDresser()
+	public static void addToDresser()//calls the methods to add to dresser
 	{
 		System.out.println("Enter the type of clothing");
 		String type = input.nextLine();
@@ -43,7 +43,7 @@ public class DresserFrontEnd {
 		dresser.add(new Clothing(type, color));
 	}
 	
-	public static void removeFromDresser()
+	public static void removeFromDresser()//calls methods to remove from dresser
 	{
 		System.out.println("Enter the type of clothing");
 		String type = input.nextLine();
