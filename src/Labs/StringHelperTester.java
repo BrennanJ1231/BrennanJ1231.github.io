@@ -7,7 +7,7 @@ public class StringHelperTester {
 	public static void main(String[] args) 
 	{
 		
-		System.out.println("Welcome to String Helper Tester\n");
+		System.out.println("Welcome to String Helper Tester\n");//Tests all of the methods in string helper
 		System.out.println("Testing Has All Unique Characters with \"facetiously\"");
 		System.out.println(StringHelper.hasAllUniqueCharacters("faceriously"));
 		System.out.println("Testing Has All Unique Characters with \"banana\"");

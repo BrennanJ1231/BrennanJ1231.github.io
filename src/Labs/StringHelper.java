@@ -26,7 +26,7 @@ public class StringHelper
 	{
 		String newString = "";
 		int length;
-		if(one.length() > two.length())
+		if(one.length() > two.length())//The if statements allow us to determine which string is longer so that the for loop can be set correctly
 		{
 			length = two.length();
 			for(int i = 1; i <length+1; i++)
@@ -60,11 +60,11 @@ public class StringHelper
 			{
 				if(s.substring(j, j+1).equalsIgnoreCase(vowels[i]))
 				{
-					newString += "oodle";
+					newString += "oodle";//replaces the vowel by adding oodle to newString in its place
 					changed = true;
 				}
 			}
-			if(changed == false)
+			if(changed == false)//This adds the letter that the loop is looking at to newString if it is not a vowel
 			{
 				newString += s.substring(j, j+1);
 			}
@@ -88,7 +88,7 @@ public class StringHelper
 					isVowel = true;
 				}
 			}
-			if(!isVowel)
+			if(!isVowel)//adds 3.4 if the character the loop is looking at is not a vowel
 			{
 				w+=3.4;
 			}
