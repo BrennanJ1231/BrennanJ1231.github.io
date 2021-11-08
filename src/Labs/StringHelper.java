@@ -52,14 +52,21 @@ public class StringHelper
 	{
 		String[] vowels = {"a", "e", "i", "o", "u"};
 		String newString = "";
+		boolean changed = false;
 		for(int j = 0; j<s.length(); j++)
 		{
+			changed = false;
 			for(int i = 0; i<vowels.length; i++)
 			{
 				if(s.substring(j, j+1).equalsIgnoreCase(vowels[i]))
 				{
-					newString += s.replace(s.substring(j,j+1), "oodle");
+					newString += "oodle";
+					changed = true;
 				}
+			}
+			if(changed == false)
+			{
+				newString += s.substring(j, j+1);
 			}
 		}
 		return newString;
@@ -69,18 +76,21 @@ public class StringHelper
 	{
 		double w = 0;
 		char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+		boolean isVowel = false;
 		for(int i = 0; i <s.length(); i++)
 		{
+			isVowel = false;
 			for(int j = 0; j<vowels.length; j++)
 			{
 				if(s.charAt(i) == vowels[j])
 				{
 					w += 2.5;
+					isVowel = true;
 				}
-				else
-				{
-					w += 3.4;
-				}
+			}
+			if(!isVowel)
+			{
+				w+=3.4;
 			}
 			
 		}
