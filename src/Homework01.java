@@ -75,10 +75,18 @@ public class Homework01
 				{
 					System.out.println("You go to Mount Doom and destroy the One Ring and Save Middle Earth");
 				}
-				else
+				if(input == 1 && inputTwo == 2)
 				{
-					System.out.println("You live a long happy life");
+					System.out.println("You are found by the armies of mordor and the one ring is taken");
 					input = 0;//clears input so that there wont be any errors
+				}
+				if(input == 2 && inputTwo == 1)
+				{
+					System.out.println("Yous somehow still end up with the ring and save middle earth");
+				}
+				if(input == 2 && inputTwo ==2)
+				{
+					System.out.println("You live a long and happy life");
 				}
 				
 			}

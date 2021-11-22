@@ -8,18 +8,18 @@ public class StringHelper
 	public static boolean hasAllUniqueCharacters(String s)
 	{
 		s = s.toLowerCase();
-		boolean repeat = true;
+		boolean unique = true;
 		for(int i = 0; i<s.length(); i++)
 		{
 			for(int j = i+1; j<s.length(); j++)
 			{
 				if(s.charAt(i) == s.charAt(j))
 				{
-					repeat = false;
+					unique = false;
 				}
 			}
 		}
-		return repeat;
+		return unique;
 	}
 	
 	public static String meshStrings(String one, String two)

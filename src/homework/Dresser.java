@@ -22,7 +22,7 @@ public class Dresser
 			{
 				if(item.equalsIgnoreCase(this.types[1]) || item.equalsIgnoreCase(this.types[2]))//checks whether it is socks or stockings since those go into the same drawer
 				{
-					if(this.clothes[1][this.clothes.length-1] != null)
+					if(this.clothes[1][this.clothes[1].length-1] != null)
 					{
 						System.out.println("This drawer is full");
 						break;
@@ -38,7 +38,7 @@ public class Dresser
 				}
 				else 
 				{
-					if(this.clothes[i][this.clothes.length-1] != null)//checks for any of the other items and puts them in their corresponding drawers
+					if(this.clothes[i][this.clothes[i].length-1] != null)//checks for any of the other items and puts them in their corresponding drawers
 					{
 						System.out.println("This drawer is full");
 						break;
